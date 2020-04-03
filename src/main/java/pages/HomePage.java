@@ -2,6 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.List;
 
 public class HomePage {
 
@@ -27,5 +31,23 @@ public class HomePage {
     public LoginPage clickLogin(){
         driver.findElement(signIn).click();
         return new LoginPage(driver);
+    }
+
+    /**
+     *
+     * @param index starts at 1
+     */
+    public void hoverOverFigure(int index){
+        WebElement figure = driver.findElements(By.xpath("//ul[@id='homefeatured']//li")).get(index - 1);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(figure).perform();
+        figure.findElement(By.xpath("//span[text() = 'Add to cart']")).click();
+    }
+
+    public class  FigureCaption{
+
+        private WebElement caption;
+        private By addToCartButton = By.xpath("//span[text() = 'Add to cart']");
+        private By more;
     }
 }
