@@ -5,10 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.MyAccountPage;
-import pages.SearchResultPage;
+import pages.*;
 
 /**
  * user javiereduardomzpa@gmail.com
@@ -21,6 +18,7 @@ public class BaseTests {
     protected SearchResultPage searchResultPage;
     protected LoginPage loginPage;
     protected MyAccountPage myAccountPage;
+    protected WomenPage womenPage;
 
     @BeforeClass
     public void setUp(){

@@ -13,8 +13,8 @@ public class LoginTest  extends BaseTests {
         loginPage.setEmail("javiereduardomzpa@gmail.com");
         loginPage.setPass("megadeth");
         myAccountPage = loginPage.clickLogin();
-        String name = myAccountPage.getUserName();
         assertEquals(myAccountPage.getUserName(), "Pepe Gonzalez", "The name not match with the user");
+        myAccountPage.clickToGotoMainPage();
     }
 
 }
